@@ -6,15 +6,15 @@ Article：https://www.frontiersin.org/articles/10.3389/fgene.2021.639930/full
 
 # Quick Start Examples
 
-##Install\
-###Python >= 3.6.0 required with all requirements.txt dependencies installed
+## Install\
+### Python >= 3.6.0 required with all requirements.txt dependencies installed
 
-##Package\
-###Pytorch >= 1.0 or >= 1.2
+## Package\
+### Pytorch >= 1.0 or >= 1.2
 
-##Data\
-###Datasets can be linked to in the paper\
-###Note:different datasets have different epochs. It's about 20,30,50.
+## Data\
+### Datasets can be linked to in the paper\
+### Note:different datasets have different epochs. It's about 20,30,50.
 
 
 perfecting.....
