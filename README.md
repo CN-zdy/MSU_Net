@@ -4,7 +4,8 @@ Article：https://www.frontiersin.org/articles/10.3389/fgene.2021.639930/full
 
 ![MSU-Net_seg_re](https://user-images.githubusercontent.com/50656765/125735764-b0ee29fd-ecfb-4ebe-8818-7c8d452d8099.gif)\
 ![MSU-Net_seg_re2](https://user-images.githubusercontent.com/50656765/125735813-f75615f5-e6bf-40f3-b1bb-abeb852a1658.gif)\
-![MSU-Net_seg](https://user-images.githubusercontent.com/50656765/125735736-b8b99a64-91d6-4b25-867e-4db108147f91.gif)
+![Figure_6_Segmentation_Result](https://user-images.githubusercontent.com/50656765/125736033-501fa324-f6bf-4622-b124-41d4ee497811.jpg)
+
 
 # FS-Net
 Multimodal Glioma Image Segmentation Using Dual Encoder Structure and Channel Spatial Attention Block\
