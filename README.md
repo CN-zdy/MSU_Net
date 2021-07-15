@@ -2,8 +2,6 @@
 MSU-Net: Multi-scale U-Net for 2D Medical Image Segmentation \
 Article：https://www.frontiersin.org/articles/10.3389/fgene.2021.639930/full
 
-![MSU-Net_seg_re](https://user-images.githubusercontent.com/50656765/125735764-b0ee29fd-ecfb-4ebe-8818-7c8d452d8099.gif)\
-![MSU-Net_seg_re2](https://user-images.githubusercontent.com/50656765/125735813-f75615f5-e6bf-40f3-b1bb-abeb852a1658.gif)\
 ![Figure_6_Segmentation_Result](https://user-images.githubusercontent.com/50656765/125736033-501fa324-f6bf-4622-b124-41d4ee497811.jpg)
 
 
@@ -11,5 +9,4 @@ Article：https://www.frontiersin.org/articles/10.3389/fgene.2021.639930/full
 Multimodal Glioma Image Segmentation Using Dual Encoder Structure and Channel Spatial Attention Block\
 Article: https://www.frontiersin.org/articles/10.3389/fnins.2020.586197/full
 
-![FS-Net_seg_re](https://user-images.githubusercontent.com/50656765/125735868-508e1f36-2719-4b92-b131-13e23f8f241b.gif)\
-![FS-Net_seg](https://user-images.githubusercontent.com/50656765/125735874-a0f8b9f6-0051-43fb-b75d-43ebc04cfc93.gif)
+![fg](https://user-images.githubusercontent.com/50656765/125736255-6a3a365e-09a1-4d71-baa1-557fd6f2698c.jpg)
