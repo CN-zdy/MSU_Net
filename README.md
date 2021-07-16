@@ -19,18 +19,18 @@ Note:different datasets have different epochs. It's about 20,30,50.
 # Train
 
 """
-# -data_*
-# ---trian_valid
-# ---train_valid_GT
-# ---test
-# ---test_GT
-# -models
-# -results
-# ---model
-# -----train_result
-# -----valid_result
-# -----test_result
-# -*.py
+#-data_*
+#---trian_valid
+#---train_valid_GT
+#---test
+#---test_GT
+#-models
+#-results
+#---model
+#-----train_result
+#-----valid_result
+#-----test_result
+#-*.py
 """
 
 
