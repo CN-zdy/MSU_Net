@@ -86,6 +86,7 @@ class Solver(object):
 			learn_rate = self.lr
 			best_Dice = 0.
 
+			print("Train......\n")
 			for epoch in range(self.num_epochs):
 
 				self.unet.train()
@@ -144,14 +145,22 @@ class Solver(object):
 				torchvision.utils.save_image(GT.data.cpu(),
                                              os.path.join(self.train_result_path,
                                                           '%s_train_%d_GT.jpg' % (self.model_type, epoch + 1)))
-                """
+                		"""
+				
+				print('Epoch [%d/%d], \n[Training]   TPR: %.4f, FPR: %.4f, PPV:%.4f, JS: %.4f, DC: %.4f, SE:%.4f, SP:%.4f' 
+				      % (epoch + 1, self.num_epochs, t_TPR, t_FPR, t_PPV, t_JS, t_DC, t_SE, t_SP))
+				
+				e = open(os.path.join(self.train_result_path, 'train_result.csv'), 'a', encoding='utf-8',newline='')
+				wr = csv.writer(e)
+				wr.writerow([self.model_type, t_TPR, t_FPR, t_PPV, t_JS, t_DC,t_SE, t_SP, epoch_loss, epoch + 1, self.num_epochs, learn_rate])
+				e.close()
 
 	#===================================== Validation ====================================#
+				print("Valid......\n")
 				self.unet.train(False)
 				self.unet.eval()
 
 				with torch.no_grad():
-
 					v_TPR = 0.  # TPR
 					v_FPR = 0.  # FPR
 					v_PPV = 0.  # PPV
@@ -191,12 +200,8 @@ class Solver(object):
 
 					"""
 					# Print the log info
-					print(
-						'Epoch [%d/%d], \n[Training]   TPR: %.4f, FPR: %.4f, PPV:%.4f, JS: %.4f, DC: %.4f, SE:%.4f, SP:%.4f' % (
-							epoch + 1, self.num_epochs, t_TPR, t_FPR, t_PPV, t_JS, t_DC, t_SE, t_SP))
-					print(
-						'[Validation] TPR: %.4f, FPR: %.4f, PPV:%.4f, JS: %.4f, DC: %.4f, SE:%.4f, SP:%.4f\n[Loss]: %.4f  [lr]: %.4f' % (
-							v_TPR, v_FPR, v_PPV, v_JS, v_DC, v_SE, v_SP, epoch_loss, learn_rate))# , loss_sum_1, loss_sum_2, loss_sum_3
+					print('[Validation] TPR: %.4f, FPR: %.4f, PPV:%.4f, JS: %.4f, DC: %.4f, SE:%.4f, SP:%.4f\n[Loss]: %.4f  [lr]: %.4f' 
+					      % (v_TPR, v_FPR, v_PPV, v_JS, v_DC, v_SE, v_SP, epoch_loss, learn_rate))
 
 					"""
 					torchvision.utils.save_image(images.data.cpu(),
@@ -208,21 +213,13 @@ class Solver(object):
 					torchvision.utils.save_image(GT.data.cpu(),
                                                  os.path.join(self.val_result_path,
                                                               '%s_val_%d_GT.jpg' % (self.model_type, epoch + 1)))
-                    """
+                    			"""
 
-					e = open(os.path.join(self.train_result_path, 'train_result.csv'), 'a', encoding='utf-8',
-							 newline='')
-					wr = csv.writer(e)
-					wr.writerow(
-						[self.model_type, t_TPR, t_FPR, t_PPV, t_JS, t_DC,t_SE, t_SP, epoch_loss, epoch + 1, self.num_epochs,
-						self.augmentation_prob, learn_rate])
-					e.close()
+					
 
 					h = open(os.path.join(self.val_result_path, 'val_result.csv'), 'a', encoding='utf-8', newline='')
 					wr = csv.writer(h)
-					wr.writerow(
-						[self.model_type, v_TPR, v_FPR, v_PPV, v_JS, v_DC, v_SE, v_SP, epoch + 1, self.num_epochs,
-						self.augmentation_prob])
+					wr.writerow([self.model_type, v_TPR, v_FPR, v_PPV, v_JS, v_DC, v_SE, v_SP, epoch + 1, self.num_epochs])
 					h.close()
 
 					# Save Best U-Net model
@@ -236,8 +233,7 @@ class Solver(object):
 	# ===================================== Test ====================================#
 	def test(self):
 
-		unet_path = os.path.join(self.model_path, '%s-%d-%.4f.pkl' % (
-			self.model_type, self.num_epochs, self.lr))
+		unet_path = os.path.join(self.model_path, '%s-%d-%.4f.pkl' % (self.model_type, self.num_epochs, self.lr))
 
 		self.unet.load_state_dict(torch.load(unet_path))
 		print('%s is Successfully Loaded from %s' % (self.model_type, unet_path))
@@ -281,18 +277,18 @@ class Solver(object):
 				print('Epoch [%d/%d], \n[Test] TPR: %.4f, FPR: %.4f, PPV:%.4f, JS: %.4f, DC: %.4f, SE: %.4f, SP: %.4f'%
 					  (epoch + 1, self.num_epochs_test, TPR, FPR, PPV, JS, DC,SE, SP))
 
-				"""
+				#  Visualization of segmentation results
 				images = images * 0.5 + 0.5
 				torchvision.utils.save_image(images.data.cpu(),
-											 os.path.join(self.test_result_path,
-													  '%s_test_%d_image.jpg' % (self.model_type, epoch + 1)))
+							os.path.join(self.test_result_path,
+							'%s_test_%d_image.jpg' % (self.model_type, epoch + 1)))
 				torchvision.utils.save_image(SR.data.cpu(),
-											 os.path.join(self.test_result_path,
-													  '%s_test_%d_SR.jpg' % (self.model_type, epoch + 1)))
+							os.path.join(self.test_result_path,
+							'%s_test_%d_SR.jpg' % (self.model_type, epoch + 1)))
 				torchvision.utils.save_image(GT.data.cpu(),
-											 os.path.join(self.test_result_path,
-													  '%s_test_%d_GT.jpg' % (self.model_type, epoch + 1)))
-				"""
+							os.path.join(self.test_result_path,
+							'%s_test_%d_GT.jpg' % (self.model_type, epoch + 1)))
+				
 
 				g = open(os.path.join(self.test_result_path,'test_result.csv'), 'a', encoding='utf-8', newline='')
 				wr = csv.writer(g)
