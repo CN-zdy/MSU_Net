@@ -24,12 +24,12 @@ Note:different datasets have different epochs. It's about 20,30,50.
 **1. Configure your environment**
 
 **2. The dataset directory is shown above. Datasets can be divided randomly by dataset.py**
-"""
--data_* \
----trian_valid\
----train_valid_GT\
----test\
----test_GT\
+      """
+      -data_* \
+      ---trian_valid\
+      ---train_valid_GT\
+      ---test\
+      ---test_GT\
 
       """
       # model hyper-parameters
