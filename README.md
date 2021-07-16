@@ -21,6 +21,9 @@ Note:different datasets have different epochs. It's about 20,30,50.
 
 # Train and Test
 
+      -data\
+      ---EM\
+      ---EM_labels\
       -data_* \
       ---trian_valid\
       ---train_valid_GT\
@@ -33,17 +36,17 @@ Note:different datasets have different epochs. It's about 20,30,50.
 
       """
       # model hyper-parameters
-      parser.add_argument('--train_valid_ratio', type=float, default=5 / 6)
-      parser.add_argument('--test_ratio', type=float, default=1 / 6)
+      parser.add_argument('--train_valid_ratio', type=float, default= *)
+      parser.add_argument('--test_ratio', type=float, default= *)
 
       # data path
-      parser.add_argument('--origin_data_path', type=str, default='.\data_DS/DS/')
-      parser.add_argument('--origin_GT_path', type=str, default='.\data_DS/DS_labels/')
+      parser.add_argument('--origin_data_path', type=str, default='.\data_EM/EM/')
+      parser.add_argument('--origin_GT_path', type=str, default='.\data_EM/EM_labels/')
 
-      parser.add_argument('--train_valid_path', type=str, default='./data_DS/train_valid/')
-      parser.add_argument('--train_valid_GT_path', type=str, default='./data_DS/train_valid_GT/')
-      parser.add_argument('-test_path', type=str, default='./data_DS/test/')
-      parser.add_argument('-test_GT_path', type=str, default='./data_DS/test_GT/')
+      parser.add_argument('--train_valid_path', type=str, default='./data_EM/train_valid/')
+      parser.add_argument('--train_valid_GT_path', type=str, default='./data_EM/train_valid_GT/')
+      parser.add_argument('-test_path', type=str, default='./data_EM/test/')
+      parser.add_argument('-test_GT_path', type=str, default='./data_EM/test_GT/')
 
 **3. Set the path and hpyer-parameters in train.py and test.py**
       """
