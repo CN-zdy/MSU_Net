@@ -21,14 +21,14 @@ Note:different datasets have different epochs. It's about 20,30,50.
 
 # Train and Test
 
-      -data\
-      ---EM\
-      ---EM_labels\
-      -data_* \
-      ---trian_valid\
-      ---train_valid_GT\
-      ---test\
-      ---test_GT\
+      -data
+      ---EM
+      ---EM_labels
+      -data_* 
+      ---trian_valid
+      ---train_valid_GT
+      ---test
+      ---test_GT
 
 **1. Configure your environment**
 
