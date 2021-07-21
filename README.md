@@ -29,6 +29,7 @@ Note:different datasets have different epochs. It's about 20,30,50.
       ---train_valid_GT
       ---test
       ---test_GT
+      -*.py
 
 **1. Configure your environment**
 
