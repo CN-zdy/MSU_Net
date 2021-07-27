@@ -21,7 +21,7 @@ def main(config):
     cudnn.benchmark = True
     if config.model_type not in ['U_Net', 'DES_Net']:
         print(
-             'ERROR!! model_type should be selected in U_Net/UNet/R2U_Net/AttU_Net/CSAU_Net/R2AttU_Net/SRAttU_Net/RAttU_Net/DE_U_Net/DECSAU_Net/DER2U_Net/DE2AttU_Net/DER2AttU_Net/DE2R2AttU_Net')
+             'ERROR!! model_type should be selected in U_Net/MSU_Net')
         print('Your input for model_type was %s' % config.model_type)
         return
 
