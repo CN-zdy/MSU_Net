@@ -22,8 +22,8 @@ Note:different datasets have different epochs. It's about 20,30,50.
 # Train and Test
 
       -data
-      ---EM
-      ---EM_labels
+      ---origin_images
+      ---groundtruth
       -data_* 
       ---trian_valid
       ---train_valid_GT
