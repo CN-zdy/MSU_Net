@@ -8,7 +8,7 @@ Article:https://www.frontiersin.org/articles/10.3389/fgene.2021.639930/full
 # Quick Start Examples
 
 ## Install
-### Python >= 3.6.0 required with all requirements.txt dependencies installed
+### Python >= 3.6.0 required
 
 ## Package
 ### Pytorch >= 1.0 or >= 1.2
